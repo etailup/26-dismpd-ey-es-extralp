@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Mi Mapa para Empezar de Cero - ¡Descarga GRATIS!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .btn-hover:hover { transform: translateY(-2px); transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); } /* As per user instruction */
+        }
+        .fa-spinner {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <div class="gradient-bg min-h-screen flex items-center justify-center px-4 py-16 md:py-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Column - Content -->
+                <div class="text-white">
+                    <div class="mb-6">
+                        <span class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-semibold">
+                            ✨ MAPA GRATIS
+                        </span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        <span class="block">Mi Mapa para</span>
+                        <span class="block text-yellow-300">Empezar de Cero</span>
+                        <span class="block">Plan de 7 Días</span>
+                    </h1>
+
+                    <p class="text-xl mb-8 text-gray-200">
+                        Renueva tu vida y reclama tu poder con esta guía paso a paso. Descubre cómo transformar tu realidad en solo una semana. 🚀
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-compass text-green-400 mr-3 fa-lg"></i>
+                            <span>Guía clara para tus primeros pasos hacia el cambio.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt text-green-400 mr-3 fa-lg"></i>
+                            <span>Plan de acción detallado para cada uno de los 7 días.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bolt text-green-400 mr-3 fa-lg"></i>
+                            <span>Estrategias para reconectar con tu poder interior.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-lightbulb text-green-400 mr-3 fa-lg"></i>
+                            <span>Inspiración y motivación para una renovación total.</span>
+                        </div>
+                    </div>
+
+                    <div class="text-2xl font-bold text-yellow-300">
+                        ¡100% GRATIS - Sin costes ocultos!
+                    </div>
+                </div>
+
+                <!-- Right Column - Form -->
+                <div class="bg-white rounded-2xl p-8 card-shadow">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                            ¡Descarga Tu Mapa Ahora!
+                        </h3>
+                        <p class="text-gray-600">
+                            Ingresa tus datos y recibe instantáneamente tu plan de 7 días.
+                        </p>
+                    </div>
+
+                    <form id="leadForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-user mr-2 text-gray-500"></i>Nombre Completo
+                            </label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                   placeholder="Tu nombre completo">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-envelope mr-2 text-gray-500"></i>Correo Electrónico
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                   placeholder="tu.email@ejemplo.com">
+                        </div>
+
+                        <!-- Hidden Fields -->
+                        <input type="hidden" id="language" name="language" value="Spanish">
+                        <input type="hidden" name="book_title" value="Dejar Ir Sin Morir Por Dentro: Cómo Empezar de Cero y Liberarte de Relaciones Tóxicas, Dependencia Emocional, Sentimientos de Culpa y Arrepentimientos Eternos">
+                        <input type="hidden" name="main_category" value="Self-Help">
+                        <input type="hidden" name="author" value="Emma Y.">
+                        <input type="hidden" name="number_title" value="26. Letting Go Without Dying Inside">
+                        <input type="hidden" name="number_title_language" value="26. Letting Go Without Dying Inside (Spanish)">
+                        <input type="hidden" name="extra_folder_link" value="https://drive.google.com/drive/folders/188lYPwyHPbWPkNlNy0TwFw_f4ahbBTNy">
+                        <input type="hidden" name="extra_pdf_link" value="https://drive.google.com/uc?export=download&id=119_DvtRM-hFdi76HR6_NMZRo_np4oFiP">
+                        <input type="hidden" name="review_link" value="https://pxl.to/26-dismpd-ey-es-review">
+
+                        <button type="submit"
+                                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-6 rounded-lg btn-hover pulse-animation text-lg">
+                            <i class="fas fa-download mr-2"></i>
+                            SÍ, ¡QUIERO MI MAPA GRATIS!
+                        </button>
+                    </form>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-xs text-gray-500">
+                            <i class="fas fa-lock mr-1"></i>
+                            Tus datos están seguros y nunca serán compartidos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    ¿Qué Descubrirás en Tu Mapa?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Una hoja de ruta completa y práctica, diseñada para guiarte día a día en tu proceso de transformación personal y empoderamiento.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-purple-50 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fas fa-map-signs text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Claridad y Dirección</h3>
+                    <p class="text-gray-600">
+                        Define tus metas y deshazte de la confusión. Sabrás exactamente qué hacer cada día para avanzar hacia la vida que deseas.
+                    </p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg bg-green-50 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fas fa-fist-raised text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Reclama tu Poder</h3>
+                    <p class="text-gray-600">
+                        Aprende a identificar y superar bloqueos internos. Libera tu verdadero potencial y toma el control de tu destino.
+                    </p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg bg-yellow-50 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i class="fas fa-leaf text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Renovación Total</h3>
+                    <p class="text-gray-600">
+                        Implementa hábitos positivos y sostenibles que te llevarán a una vida más plena, consciente y con propósito.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    Lo que Dicen Quienes Ya Empezaron de Cero
+                </h2>
+                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Personas como tú han encontrado la inspiración y las herramientas para transformar sus vidas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mr-4 text-white text-2xl font-bold">
+                            <span>A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-gray-800">Ana G.</h4>
+                            <p class="text-gray-600 text-sm">Emprendedora Renovada</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Este mapa fue la chispa que necesitaba. En solo 7 días, sentí un cambio increíble en mi energía y enfoque. ¡Totalmente recomendado para cualquiera que busque un nuevo comienzo!"
+                    </p>
+                    <div class="mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mr-4 text-white text-2xl font-bold">
+                            <span>C</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-gray-800">Carlos P.</h4>
+                            <p class="text-gray-600 text-sm">Encontrando mi Camino</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Estaba perdido y sin saber por dónde empezar. El plan de 7 días es simple, directo al grano y muy poderoso. ¡Gracias por esta herramienta tan valiosa!"
+                    </p>
+                    <div class="mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="gradient-bg py-20">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                ¿Listo para Empezar de Cero y Reclamar tu Poder?
+            </h2>
+            <p class="text-xl text-gray-200 mb-10">
+                Miles de personas ya están transformando sus vidas con este plan. Únete a ellos y da el primer paso hacia la renovación que mereces. Tu mapa personal te espera.
+            </p>
+            <a href="#leadForm" class="inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-lg btn-hover text-xl pulse-animation">
+                <i class="fas fa-gift mr-2"></i>
+                OBTENER MI MAPA GRATIS AHORA
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-300">&copy; 2024 Mi Mapa para Empezar de Cero. Todos los derechos reservados.</p>
+            <p class="text-gray-400 text-sm mt-3">
+                <i class="fas fa-shield-alt mr-1"></i>
+                Tu privacidad es importante. Tus datos están seguros y protegidos.
+            </p>
+        </div>
+    </footer>
+
+<script>
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitButton = e.target.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        
+        // Basic client-side validation check
+        let formIsValid = true;
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+
+        // Clear previous error messages
+        document.querySelectorAll('.error-message').forEach(el => el.remove());
+        nameInput.classList.remove('border-red-500');
+        emailInput.classList.remove('border-red-500');
+        nameInput.classList.add('border-gray-300');
+        emailInput.classList.add('border-gray-300');
+
+        if (nameInput.value.trim().length < 2) {
+            formIsValid = false;
+            nameInput.classList.add('border-red-500');
+            nameInput.classList.remove('border-gray-300');
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message text-red-500 text-xs mt-1';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i>El nombre debe tener al menos 2 caracteres.';
+            nameInput.parentNode.insertBefore(errorMsg, nameInput.nextSibling);
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            formIsValid = false;
+            emailInput.classList.add('border-red-500');
+            emailInput.classList.remove('border-gray-300');
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message text-red-500 text-xs mt-1';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i>Por favor, introduce un email válido.';
+            emailInput.parentNode.insertBefore(errorMsg, emailInput.nextSibling);
+        }
+
+        if (!formIsValid) {
+            submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>REVISA TUS DATOS';
+            submitButton.classList.remove('from-blue-600', 'to-purple-600');
+            submitButton.classList.add('bg-orange-500');
+            setTimeout(() => {
+                submitButton.innerHTML = originalButtonText;
+                submitButton.classList.remove('bg-orange-500');
+                submitButton.classList.add('from-blue-600', 'to-purple-600');
+            }, 3000);
+            return;
+        }
+        
+        // Show loading state
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>ENVIANDO...';
+        submitButton.disabled = true;
+        
+        const formData = {
+            name: nameInput.value,
+            email: emailInput.value,
+            language: document.getElementById('language').value,
+            book_title: document.querySelector('input[name="book_title"]').value,
+            main_category: document.querySelector('input[name="main_category"]').value,
+            author: document.querySelector('input[name="author"]').value,
+            number_title: document.querySelector('input[name="number_title"]').value,
+            number_title_language: document.querySelector('input[name="number_title_language"]').value,
+            extra_folder_link: document.querySelector('input[name="extra_folder_link"]').value,
+            extra_pdf_link: document.querySelector('input[name="extra_pdf_link"]').value,
+            review_link: document.querySelector('input[name="review_link"]').value
+        };
+        
+        try {
+            const response = await fetch('https://hook.integrator.boost.space/mqntylhrehljw4p5tkxjpxj28icglsot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                // Show success - Email sent
+                submitButton.innerHTML = '<i class="fas fa-check-circle mr-2"></i>¡MAPA ENVIADO!';
+                submitButton.classList.remove('from-blue-600', 'to-purple-600', 'bg-orange-500');
+                submitButton.classList.add('bg-green-500');
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'https://drive.google.com/uc?export=download&id=119_DvtRM-hFdi76HR6_NMZRo_np4oFiP';
+                }, 1500); // 1.5 second delay
+                
+            } else {
+                // Handle server errors
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Server error:', response.status, errorData);
+                throw new Error(`Error del servidor: ${response.status}`);
+            }
+            
+        } catch (error) {
+            console.error('Error en el envío:', error);
+            
+            // Show error state
+            submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>ERROR - INTÉNTALO DE NUEVO';
+            submitButton.classList.remove('from-blue-600', 'to-purple-600', 'bg-green-500');
+            submitButton.classList.add('bg-red-500');
+            
+            // Reset button after delay
+            setTimeout(() => {
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+                submitButton.classList.remove('bg-red-500');
+                submitButton.classList.add('from-blue-600', 'to-purple-600');
+            }, 4000);
+        }
+    });
+
+    // Smooth scroll for CTA buttons linking to the form
+    document.querySelectorAll('a[href="#leadForm"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetElement = document.getElementById('leadForm');
+            if (targetElement) {
+                // Scroll to the form container (the parent div of the form) for better centering
+                const formContainer = targetElement.closest('.bg-white.rounded-2xl');
+                if (formContainer) {
+                    formContainer.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center' 
+                    });
+                } else { // Fallback to form itself
+                     targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center' 
+                    });
+                }
+                
+                // Focus first input field after scroll
+                setTimeout(() => {
+                    const firstInput = targetElement.querySelector('input[type="text"], input[type="email"]');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 600); // Increased delay for smoother scroll then focus
+            }
+        });
+    });
+
+    // Inline validation messages for better UX without separate function calls
+    document.getElementById('name').addEventListener('blur', function() {
+        const name = this.value.trim();
+        const errorMsgElement = this.parentNode.querySelector('.error-message');
+        if (errorMsgElement) errorMsgElement.remove(); // Clear previous message specifically for this field
+
+        if (name.length > 0 && name.length < 2) {
+            this.classList.add('border-red-500');
+            this.classList.remove('border-gray-300');
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message text-red-500 text-xs mt-1';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i>El nombre debe tener al menos 2 caracteres.';
+            this.parentNode.insertBefore(errorMsg, this.nextSibling);
+        } else if (name.length >= 2) {
+            this.classList.remove('border-red-500');
+            this.classList.add('border-green-500'); // Optional: show green border on valid
+        } else {
+            this.classList.remove('border-red-500', 'border-green-500');
+            this.classList.add('border-gray-300');
+        }
+    });
+
+    document.getElementById('email').addEventListener('blur', function() {
+        const email = this.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValid = emailRegex.test(email);
+        const errorMsgElement = this.parentNode.querySelector('.error-message');
+        if (errorMsgElement) errorMsgElement.remove(); // Clear previous message
+
+        if (email.length > 0 && !isValid) {
+            this.classList.add('border-red-500');
+            this.classList.remove('border-gray-300');
+            const errorMsg = document.createElement('p');
+            errorMsg.className = 'error-message text-red-500 text-xs mt-1';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i>Por favor, introduce un email válido.';
+            this.parentNode.insertBefore(errorMsg, this.nextSibling);
+        } else if (isValid) {
+            this.classList.remove('border-red-500');
+            this.classList.add('border-green-500'); // Optional: show green border on valid
+        } else {
+             this.classList.remove('border-red-500', 'border-green-500');
+            this.classList.add('border-gray-300');
+        }
+    });
+</script>
+
+</body>
+</html>
